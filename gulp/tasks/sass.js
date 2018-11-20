@@ -31,6 +31,7 @@ module.exports = function() {
       .pipe($.gp.autoprefixer({
         browsers: ['last 5 versions']
       }))
+      .pipe($.gp.csso())
       .pipe($.gp.sourcemaps.write())
       .pipe($.gulp.dest('build/static/css/'))
       .pipe($.browserSync.reload({
