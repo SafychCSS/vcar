@@ -1,0 +1,27 @@
+@mixin font($alias, $name) {
+  @font-face {
+    font-family: $alias;
+    src: url('../fonts/' + $name + '.woff2') format('woff2'),
+    url('../fonts/' + $name + '.woff') format('woff');
+  }
+}
+
+@mixin acenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, 50%);
+}
+
+//media
+@mixin mqmax($width) {
+  @media screen and (max-width: $width+ 'px') {
+    @content;
+  }
+}
+
+@mixin mqmin($width) {
+  @media screen and (min-width: $width+ 'px') {
+    @content;
+  }
+}
